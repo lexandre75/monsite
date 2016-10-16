@@ -1,0 +1,24 @@
+survey_index:
+    path:     /
+    defaults: { _controller: "SurveyBundle:Survey:index" }
+    methods:  GET
+
+survey_show:
+    path:     /{id}/show
+    defaults: { _controller: "SurveyBundle:Survey:show" }
+    methods:  GET
+
+survey_new:
+    path:     /new
+    defaults: { _controller: "SurveyBundle:Survey:new" }
+    methods:  [GET, POST]
+
+survey_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SurveyBundle:Survey:edit" }
+    methods:  [GET, POST]
+
+survey_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SurveyBundle:Survey:delete" }
+    methods:  DELETE

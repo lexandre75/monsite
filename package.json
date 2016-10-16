@@ -1,0 +1,29 @@
+{
+  "name": "monsite",
+  "version": "0.0.1",
+  "description": "mon site web perso",
+  "main": "web/app.php",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexandre75/monsite.git"
+  },
+  "keywords": [
+    "web",
+    "site",
+    "perso",
+    "form",
+    "survey"
+  ],
+  "author": "alexandre clotail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lexandre75/monsite/issues"
+  },
+  "homepage": "https://github.com/lexandre75/monsite#readme"
+}

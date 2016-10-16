@@ -1,3 +1,7 @@
+survey_survey:
+    resource: "@SurveyBundle/Resources/config/routing/survey.yml"
+    prefix:   /survey
+
 survey_homepage:
     path:     /
     defaults: { _controller: SurveyBundle:Default:index }

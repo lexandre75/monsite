@@ -1,64 +1,82 @@
 <?php
-
 namespace PostBundle\Entity;
-
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping AS ORM;
 
 /**
- * Post
- *
- * @ORM\Table(name="post")
- * @ORM\Entity(repositoryClass="PostBundle\Repository\PostRepository")
+ * @ORM\Entity
+ * @ORM\Table(indexes={
+ *         @ORM\Index(name="date_index", columns={"post_date_published"}),
+ *         @ORM\Index(name="slug_index", columns={"slug"})
+ *     })
  */
 class Post
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="test", type="string", length=255, nullable=true, unique=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
-    private $test;
-
+    private $post_date_published;
 
     /**
-     * Get id
-     *
-     * @return integer 
+     * @ORM\Column(type="datetime", nullable=true)
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $post_date_end;
 
     /**
-     * Set test
-     *
-     * @param string $test
-     * @return Post
+     * @ORM\Column(type="string", nullable=true)
      */
-    public function setTest($test)
-    {
-        $this->test = $test;
-
-        return $this;
-    }
+    private $title;
 
     /**
-     * Get test
-     *
-     * @return string 
+     * @ORM\Column(type="text", nullable=true)
      */
-    public function getTest()
-    {
-        return $this->test;
-    }
+    private $content;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $slug;
+
+    /**
+     * @ORM\Column(type="simple_array", nullable=true)
+     */
+    private $type;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $published;
+
+    /**
+     * @ORM\OneToMany(targetEntity="PostBundle\Entity\Post", mappedBy="parent")
+     */
+    private $child;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="post")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $creator;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="PostBundle\Entity\Post", inversedBy="child")
+     * @ORM\JoinColumn(name="post_id", referencedColumnName="id")
+     */
+    private $parent;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="PostBundle\Entity\Ressource", inversedBy="post")
+     * @ORM\JoinTable(
+     *     name="PostRessource",
+     *     joinColumns={@ORM\JoinColumn(name="post_id", referencedColumnName="id", nullable=false)},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="ressource_id", referencedColumnName="id", nullable=false)}
+     * )
+     */
+    private $ressource;
 }
