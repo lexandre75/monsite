@@ -12,7 +12,7 @@ use SurveyBundle\Form\SurveyType;
  * Survey controller.
  *
  */
-class SurveyController extends Controller
+class AdminController extends Controller
 {
     /**
      * Lists all Survey entities.
@@ -24,7 +24,7 @@ class SurveyController extends Controller
 
         $surveys = $em->getRepository('SurveyBundle:Survey')->findAll();
 
-        return $this->render('survey/index.html.twig', array(
+        return $this->render('admin/survey/index.html.twig', array(
             'surveys' => $surveys,
         ));
     }
@@ -47,7 +47,7 @@ class SurveyController extends Controller
             return $this->redirectToRoute('survey_show', array('id' => $survey->getId()));
         }
 
-        return $this->render('survey/new.html.twig', array(
+        return $this->render('admin/survey/new.html.twig', array(
             'survey' => $survey,
             'form' => $form->createView(),
         ));
@@ -61,7 +61,7 @@ class SurveyController extends Controller
     {
         $deleteForm = $this->createDeleteForm($survey);
 
-        return $this->render('survey/show.html.twig', array(
+        return $this->render('admin/survey/show.html.twig', array(
             'survey' => $survey,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -85,7 +85,7 @@ class SurveyController extends Controller
             return $this->redirectToRoute('survey_edit', array('id' => $survey->getId()));
         }
 
-        return $this->render('survey/edit.html.twig', array(
+        return $this->render('admin/survey/edit.html.twig', array(
             'survey' => $survey,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

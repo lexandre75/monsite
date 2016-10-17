@@ -8,8 +8,8 @@
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
     "require": {
-        "php": ">=5.5.9",
-        "symfony/symfony": "3.*",
+        "php": ">=5.3.9",
+        "symfony/symfony": "2.8.*",
         "doctrine/orm": "^2.4.8",
         "doctrine/doctrine-bundle": "~1.4",
         "symfony/swiftmailer-bundle": "~2.3",
@@ -42,7 +42,7 @@
     "config": {
         "bin-dir": "bin",
         "platform": {
-            "php": "7.0.10"
+            "php": "5.3.9"
         }
     },
     "extra": {
