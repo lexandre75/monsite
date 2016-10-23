@@ -1,6 +1,6 @@
 <?php include('header.html'); ?>
 <div class="row">
-    <h1>Creer un formulaire</h1>
+    <h1>Creer une question</h1>
     <!-- form input mask -->
     <div class="col-md-6 col-sm-12 col-xs-12">
         <div class="x_panel">
@@ -14,16 +14,9 @@
                 <form class="form-horizontal form-label-left">
 
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3">Nom du formulaire</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3">La question</label>
                         <div class="col-md-9 col-sm-9 col-xs-9">
-                            <input class="form-control" name="name" placeholder="Nom du formulaire">
-                            <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3">Description</label>
-                        <div class="col-md-9 col-sm-9 col-xs-9">
-                            <textarea name="description" class="form-control" rows="3" placeholder="Description du formulaire"></textarea>
+                            <textarea name="description" class="form-control" rows="3" placeholder="Formulez la question"></textarea>
                             <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                         </div>
                     </div>
@@ -80,21 +73,6 @@
                 <form class="form-horizontal form-label-left">
 
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3">Nombre du question total</label>
-                        <div class="col-md-9 col-sm-9 col-xs-9">
-                            <input class="form-control" name="name" placeholder="Nombre de question par session">
-                            <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3">Bonne reponse min</label>
-                        <div class="col-md-9 col-sm-9 col-xs-9">
-                            <input class="form-control" name="name" placeholder="Bonne reponse minimum pour passer le questionnaire avec succès">
-                            <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-3">Niveau</label>
                         <div class="col-md-9 col-sm-9 col-xs-9">
                             <input type="text" id="range" value="" name="range" />
@@ -121,6 +99,7 @@
                             </div>
                         </div>
                     </div>
+                    <br/>
 
                     <div class="ln_solid"></div>
 
@@ -141,76 +120,59 @@
     <div class="col-md-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Question quick view</h2>
+                <h2>Les réponses</h2>
                 &nbsp;
-                <a class="btn btn-default" href="#">Nouvelle question</a>
+                <a class="btn btn-default" href="#">Ajouter une réponse</a>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <table id="datatable-buttons" class="table table-striped table-bordered">
-                    <thead>
-                    <tr>
-                        <th>Question</th>
-                        <th>Nombre de reponse</th>
-                        <th>Multiple</th>
-                        <th>Ouverte</th>
-                        <th>Category / Subcategory</th>
-                        <th>Type</th>
-                        <th>Niveau</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
+                <br>
+                <form class="form-horizontal form-label-left">
 
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="">
+                                <label>
+                                    <input type="checkbox" class="js-switch" checked /> Ouverte
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="">
+                                <label>
+                                    <input type="checkbox" class="js-switch" checked /> Multiple
+                                </label>
+                            </div>
+                        </div>
+                    </div>
 
-                    <tbody>
-                    <tr>
-                        <td>Comment faire taire lalya cissé le gros bebe ? </td>
-                        <td>3</td>
-                        <td>Oui</td>
-                        <td>Oui</td>
-                        <td>Les erreurs / Gestion</td>
-                        <td>Connaissance</td>
-                        <td>5</td>
-                        <td>
-                            <!-- delete -->
-                            <button data-toggle="confirmation" type="button" class="btn btn-xs btn-danger">
-                                <span class="fa fa-trash"></span>&nbsp;
-                            </button>
-                            <!-- view -->
-                            <button type="button" class="btn btn-xs">
-                                <span class="fa fa-edit"></span>
-                            </button>
-                            <!-- edit -->
-                            <button type="button" class="btn btn-xs">
-                                <span class="fa fa-eye"></span>&nbsp;
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Peux t on faire taire lalya cisse ? </td>
-                        <td>3</td>
-                        <td>Non</td>
-                        <td>Non</td>
-                        <td>Les erreurs / Gestion</td>
-                        <td>Algorythme</td>
-                        <td>5</td>
-                        <td>
-                            <!-- delete -->
-                            <button data-toggle="confirmation" type="button" class="btn btn-xs btn-danger">
-                                <span class="fa fa-trash"></span>&nbsp;
-                            </button>
-                            <!-- view -->
-                            <button type="button" class="btn btn-xs">
-                                <span class="fa fa-edit"></span>
-                            </button>
-                            <!-- edit -->
-                            <button type="button" class="btn btn-xs">
-                                <span class="fa fa-eye"></span>&nbsp;
-                            </button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback responseCollection">
+
+                        <div class="form-group">
+                            <label class="control-label col-md-1 col-sm-1 col-xs-1">Reponse 1</label>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <textarea name="description" class="form-control" rows="3" placeholder="Intitulé de la réponse"></textarea>
+                                <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="">
+                                    <label>
+                                        <input type="checkbox" class="js-switch" /> Vrai
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ln_solid"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-9">
+                            <button type="submit" class="btn btn-primary">Cancel</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
             </div>
         </div>
     </div>
